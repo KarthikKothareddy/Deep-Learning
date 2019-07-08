@@ -52,7 +52,7 @@ testLabels = le.transform(testLabels)
 
 # initialize the optimizer and model
 print("[INFO] compiling model...")
-opt = SGD(lr=0.001)
+opt = SGD(lr=0.01)
 model = LeNet.build(width=28, height=28, depth=1, classes=10)
 model.compile(
 	loss="categorical_crossentropy",
@@ -67,7 +67,7 @@ H = model.fit(
 	trainLabels,
 	validation_data=(testData, testLabels),
 	batch_size=128,
-	epochs=20,
+	epochs=50,
 	verbose=1
 )
 
