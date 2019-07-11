@@ -62,8 +62,12 @@ callbacks = [LearningRateScheduler(step_decay)]
 # initialize the optimizer and model
 opt = SGD(lr=0.01, momentum=0.9, nesterov=True)
 model = MiniVGGNet.build(width=32, height=32, depth=3, classes=10)
-model.compile(loss="categorical_crossentropy", optimizer=opt,
-	metrics=["accuracy"])
+
+model.compile(
+	loss="categorical_crossentropy",
+	optimizer=opt,
+	metrics=["accuracy"]
+)
 
 # train the network
 H = model.fit(
