@@ -48,6 +48,7 @@ labelNames = ["airplane", "automobile", "bird", "cat", "deer",
 print("[INFO] compiling model...")
 opt = SGD(lr=0.01, momentum=0.9, nesterov=True)
 model = MiniVGGNet.build(width=32, height=32, depth=3, classes=10)
+
 # compile
 model.compile(
 	loss="categorical_crossentropy",
